@@ -1,0 +1,15 @@
+image: "artifactory-gojek.golabs.io:6555/cx-ziggurat:latest"
+
+stages:
+  - test
+
+cache:
+  paths:
+    - ~/.m2/
+  key: "$CI_BUILD_REF_NAME"
+
+test:
+ stage: test
+ script:
+    - lein test
+
